@@ -1,4 +1,11 @@
+import "./globals.css";
 import type { Metadata } from "next";
+import localFont from 'next/font/local'
+ 
+const myFont = localFont({
+  src: '../fonts/WantedSansVariable.woff2',
+})
+ 
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className={myFont.className}>
       <body>{children}</body>
     </html>
   );
